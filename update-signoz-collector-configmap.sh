@@ -19,13 +19,13 @@ require_cmd() {
 
 echo "==> Validating prerequisites"
 require_cmd kubectl
-require_cmd python
+require_cmd python3
 
 echo "==> Fetching live ConfigMap from cluster"
 kubectl get configmap "$CONFIGMAP_NAME" -n "$NAMESPACE" -o yaml > "$LIVE_CM_FILE"
 
 echo "==> Building patch payload for data.otel-collector-config.yaml only"
-python - "$TMP_PATCH_FILE" <<'PY'
+python3 - "$TMP_PATCH_FILE" <<'PY'
 import json
 import sys
 from pathlib import Path
