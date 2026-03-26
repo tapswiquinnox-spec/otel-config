@@ -64,19 +64,19 @@ exporters:
     timeout: 45s
   kafka:
     brokers:
-      - topology-kafka-kafka-bootstrap.sentinel.svc.cluster.local:9092
+      - topology-kafka-kafka-bootstrap.q-dev-sapce.svc.cluster.local:9092
     topic: traces-topic
     encoding: otlp_json
     partition_traces_by_id: true
   kafka/metrics:
     brokers:
-      - topology-kafka-kafka-bootstrap.sentinel.svc.cluster.local:9092
+      - topology-kafka-kafka-bootstrap.q-dev-sapce.svc.cluster.local:9092
     topic: otel-metrics-topic
     encoding: otlp_json
     partition_traces_by_id: false
   kafka/logs:
     brokers:
-      - topology-kafka-kafka-bootstrap.sentinel.svc.cluster.local:9092
+      - topology-kafka-kafka-bootstrap.q-dev-sapce.svc.cluster.local:9092
     topic: otel-logs-topic
     encoding: otlp_json
     partition_traces_by_id: false
